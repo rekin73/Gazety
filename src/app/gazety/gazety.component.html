@@ -1,0 +1,17 @@
+<h2>Moje Gazety</h2>
+<ul class="gazety">
+  <li *ngFor="let gazeta of gazety" [class.selected]="gazeta === selectedGazeta" (click)="onSelect(gazeta)">
+    <span class="badge">{{gazeta.id}}</span> {{gazeta.name}}
+  </li>
+</ul>
+<div *ngIf="selectedGazeta">
+  
+   <h2>{{selectedGazeta.name | uppercase}} Details</h2>
+   <div><span>id: </span>{{selectedGazeta.id}}</div>
+   <div>
+     <label>name:
+       <input [(ngModel)]="selectedGazeta.name" placeholder="name">
+     </label>
+   </div>
+  
+ </div>
